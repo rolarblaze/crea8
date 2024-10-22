@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Client Information Email Template">
+    <meta name="author" content="Your Company Name">
+    <title>Client Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .details {
+            margin-bottom: 15px;
+        }
+        .details label {
+            font-weight: bold;
+            display: block;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        .details a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .details a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Client Information</h2>
+        </div>
+        <div class="details">
+            <label>Budle Name:</label>
+            <p>{{ bundle_name }}</p>
+        </div>
+        <div class="details">
+            <label>Package For Bundle Selected:</label>
+            <p>{{ package_name }}</p>
+        </div>
+
+        <div class="details">
+            <label>First Name:</label>
+            <p>{{ first_name }}</p>
+        </div>
+        <div class="details">
+            <label>Last Name:</label>
+            <p>{{ last_name }}</p>
+        </div>
+        <div class="details">
+            <label>Company Name:</label>
+            <p>{{ company_name }}</p>
+        </div>
+        <div class="details">
+            <label>Phone Number:</label>
+            <p>{{ phone_number }}</p>
+        </div>
+        <div class="details">
+            <label>Work Email:</label>
+            <p>{{ work_email }}</p>
+        </div>
+        <div class="details">
+            <label>Industry Type:</label>
+            <p>{{ industry_type }}</p>
+        </div>
+        <div class="details">
+            <label>Brief Objectives:</label>
+            <p>{{ brief_objectives }}</p>
+        </div>
+        <div class="details">
+            <label>Brief Description:</label>
+            <p>{{ brief_description }}</p>
+        </div>
+        <div class="details">
+            <label>Competitors:</label>
+            <p>{{ competitors }}</p>
+        </div>
+        <div class="details">
+            <label>Benchmarks:</label>
+            <p>{{ benchmarks }}</p>
+        </div>
+        {% if brief_attachment %}
+        <div class="details">
+            <label>Brief Attachment:</label>
+            <p>Download Brief Attachment Using this link: {{ brief_attachment }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

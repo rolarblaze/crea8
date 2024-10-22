@@ -1,0 +1,28 @@
+
+name: SellCrea8 API Application 
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+       - name: push repo
+         uses: actions/checkout@v3
+       - name: Set up Python 3.12
+         uses: actions/setup-python@v3
+         with:
+           python-version: 3.12 
+       - name: Upgrade pip
+         run: python -m pip install --upgrade pip
+       - name: install types-requests
+         run: python -m pip install types-requests    
+       - name: Install Dependencies
+         run: pip install -r requirements.txt
+       - name: Error check
+         run: mypy --ignore-missing-imports --disable-error-code "annotation-unchecked" --disable-error-code "attr-defined" --disable-error-code "unused-ignore" --disable-error-code "var-annotated" --disable-error-code "arg-type" --disable-error-code "assignment" --disable-error-code "misc" --disable-error-code "valid-type"  --disable-error-code "call-arg" app
+
+  

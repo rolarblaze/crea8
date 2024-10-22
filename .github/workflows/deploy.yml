@@ -1,0 +1,19 @@
+name: Api Deploy CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  heroku-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get actions
+        uses: actions/checkout@v3
+      - name: deploying to heroku
+        uses: akhileshns/heroku-deploy@v3.12.13
+        with:
+          heroku_api_key: ${{secrets.API_TOKEN_HEROKU}}
+          heroku_app_name: ${{secrets.APPNAME_HEROKU}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
